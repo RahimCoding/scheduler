@@ -25,3 +25,23 @@ export const getInterview = function(state, interview){
     return null
   
 }
+
+export function getInterviewersForDay(state, day) {
+  const results = []
+  // find the day object
+  // for each of their apt ids
+  // add that apt to results
+  
+  const dayobj = state.days.find(d => d.name === day)
+  
+  if(!dayobj){
+    return results
+  }
+  
+  for (const id of dayobj.interviewers) {
+    const apt = state.interviewers[id]
+    results.push(apt)
+  }
+  
+  return results  
+  }
