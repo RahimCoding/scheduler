@@ -44,8 +44,24 @@ npm run storybook
 ## Homepage View
 ![My Image](docs/daily%20view.png)
 ## Book an Appointment!
+
+https://user-images.githubusercontent.com/112907944/206574171-d947c66e-dc20-4175-8b66-3a8c6f06fd1c.mp4
+
+
 ## Edit an Appointment!
+
+
+https://user-images.githubusercontent.com/112907944/206574215-d1a4f454-9acf-41b4-bd02-ab042a58a67b.mp4
+
+
+
 ## Delete an Appointment!
+
+
+https://user-images.githubusercontent.com/112907944/206574240-1c709a75-cd09-46da-9c48-5a0c06b692d0.mp4
+
+
+
 ## API server and Database Setup
 ### For full functionality both must run concurrently: the client and the API server applications.
 - Click [here](https://github.com/lighthouse-labs/scheduler-api) to tart by forking and cloning the scheduler-api server
