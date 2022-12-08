@@ -36,7 +36,7 @@ export default function useApplicationData(initial) {
   const setDay = day => setState({ ...state, day });
 
   function bookInterview(id, interview) {
-    console.log(id, interview);
+
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -45,11 +45,11 @@ export default function useApplicationData(initial) {
       ...state.appointments,
       [id]: appointment
     };
-    console.log(state.day, "<=== state.day 48")
+   
     return axios.put(`/api/appointments/${id}`, { interview }).then(() => {
-      console.log(state.day, "<=== state.day 50")
+
       const dayobj = updateSpots(state, appointments, state.day)
-      console.log(dayobj, "<=== dayobj 52")
+  
       const newDays = [...state.days]
       newDays[dayobj.id - 1] = dayobj
       setState({
@@ -63,7 +63,7 @@ export default function useApplicationData(initial) {
 
 
   function cancelInterview(id) {
-    console.log(id);
+
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -94,7 +94,7 @@ export default function useApplicationData(initial) {
       axios.get('/api/appointments'),
       axios.get('/api/interviewers')
     ]).then((all) => {
-      console.log("all",all[0].data)
+ 
       setState({ ...state, days: all[0].data, appointments: all[1].data, interviewers: all[2].data })
     });
   }, [])
