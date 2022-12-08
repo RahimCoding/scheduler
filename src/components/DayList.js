@@ -12,7 +12,7 @@ export default function DayList(props) {
     />)
 
   return (
-    <ul>{list}</ul>
+    <ul data-testid="days">{list}</ul>
   );
 
 }

@@ -21,7 +21,7 @@ const DayListItemClasses = classNames("day-list__item",
 {"day-list__item--selected" : props.selected}, 
 {"day-list__item--full" : props.spots === 0})
   return (
-    <li className={DayListItemClasses} onClick={() => props.setDay(props.name)}> 
+    <li className={DayListItemClasses} data-testid="day" onClick={() => props.setDay(props.name)}> 
       <h2 >{props.name}</h2> 
       <h3 >{formatSpots(props)}</h3>
     </li>
