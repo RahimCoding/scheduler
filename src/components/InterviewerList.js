@@ -9,12 +9,12 @@ export default function InterviewerList(props) {
 
   const list = props.interviewers.map(interviewer =>
     <InterviewerListItem
-    key={interviewer.id}
-    name={interviewer.name}
-    avatar={interviewer.avatar}
-    selected={interviewer.id === props.value}
-    setInterviewer={() => props.onChange(interviewer.id)}
-  />)
+      key={interviewer.id}
+      name={interviewer.name}
+      avatar={interviewer.avatar}
+      selected={interviewer.id === props.value}
+      setInterviewer={() => props.onChange(interviewer.id)}
+    />)
 
 
   return (
@@ -22,10 +22,10 @@ export default function InterviewerList(props) {
       <h4 className="interviewers__header text--light">{list.name}</h4>
       <ul className="interviewers__list">{list}</ul>
     </section>
-    
+
   );
 
 }
 InterviewerList.propTypes = {
-  interviewers: PropTypes.array.isRequired};
-  
+  interviewers: PropTypes.array.isRequired
+};

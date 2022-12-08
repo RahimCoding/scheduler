@@ -2,8 +2,8 @@ import React from "react";
 
 import {
   render, cleanup, waitForElement, fireEvent,
-  getByText, prettyDOM, getAllByTestId, getByAltText,
-  getByPlaceholderText, queryByText, getByTestId, queryByAltText
+  getByText, getAllByTestId, getByAltText,
+  getByPlaceholderText, queryByText, queryByAltText
 } from "@testing-library/react";
 
 import Application from "components/Application";
@@ -108,12 +108,12 @@ describe("Appointment", () => {
 
     expect(getByText(container, "Sylvia Palmer")).toBeInTheDocument();
 
-    const day = getAllByTestId(container, "day").find(day => 
+    const day = getAllByTestId(container, "day").find(day =>
       queryByText(day, "Monday")
     );
     expect(getByText(day, "1 spot remaining"))
   });
-  
+
   it("shows the save error when failing to save an appointment", async () => {
     axios.put.mockRejectedValueOnce();
     const { container } = render(<Application />)

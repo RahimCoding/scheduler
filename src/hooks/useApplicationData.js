@@ -45,11 +45,11 @@ export default function useApplicationData(initial) {
       ...state.appointments,
       [id]: appointment
     };
-   
+
     return axios.put(`/api/appointments/${id}`, { interview }).then(() => {
 
       const dayobj = updateSpots(state, appointments, state.day)
-  
+
       const newDays = [...state.days]
       newDays[dayobj.id - 1] = dayobj
       setState({
@@ -94,7 +94,7 @@ export default function useApplicationData(initial) {
       axios.get('/api/appointments'),
       axios.get('/api/interviewers')
     ]).then((all) => {
- 
+
       setState({ ...state, days: all[0].data, appointments: all[1].data, interviewers: all[2].data })
     });
   }, [])

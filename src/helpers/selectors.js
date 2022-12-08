@@ -1,29 +1,29 @@
 export function getAppointmentsForDay(state, day) {
-const results = []
-// find the day object
-// for each of their apt ids
-// add that apt to results
+  const results = []
+  // find the day object
+  // for each of their apt ids
+  // add that apt to results
 
-const dayobj = state.days.find(d => d.name === day)
+  const dayobj = state.days.find(d => d.name === day)
 
-if(!dayobj){
+  if (!dayobj) {
+    return results
+  }
+
+  for (const id of dayobj.appointments) {
+    const apt = state.appointments[id]
+    results.push(apt)
+  }
+
   return results
 }
 
-for (const id of dayobj.appointments) {
-  const apt = state.appointments[id]
-  results.push(apt)
-}
+export const getInterview = function (state, interview) {
+  if (interview) {
+    return { student: interview.student, interviewer: state.interviewers[interview.interviewer] }
+  }
+  return null
 
-return results  
-}
-
-export const getInterview = function(state, interview){
-  if(interview){
-    return {student: interview.student, interviewer: state.interviewers[interview.interviewer]}
-  } 
-    return null
-  
 }
 
 export function getInterviewersForDay(state, day) {
@@ -31,17 +31,17 @@ export function getInterviewersForDay(state, day) {
   // find the day object
   // for each of their apt ids
   // add that apt to results
-  
+
   const dayobj = state.days.find(d => d.name === day)
-  
-  if(!dayobj){
+
+  if (!dayobj) {
     return results
   }
-  
+
   for (const id of dayobj.interviewers) {
     const apt = state.interviewers[id]
     results.push(apt)
   }
-  
-  return results  
-  }
+
+  return results
+}

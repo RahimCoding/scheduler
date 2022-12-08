@@ -4,10 +4,10 @@ import { useState } from "react"
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
-  
+
   function transition(item, replace = false) {
     setMode(item)
-    if(replace === true){
+    if (replace === true) {
       setHistory(prev => [...prev.slice(0, prev.length - 1), item])
     }
     else {
@@ -16,7 +16,7 @@ export default function useVisualMode(initial) {
   }
 
   function back() {
-    if(history.length === 1){
+    if (history.length === 1) {
       return
     }
 

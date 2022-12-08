@@ -74,7 +74,7 @@ export default {
 
   }),
   get: jest.fn(url => {
-  
+
     if (url === "/api/days") {
       return Promise.resolve({
         status: 200,

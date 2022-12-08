@@ -144,43 +144,43 @@ storiesOf("InterviewerList", module)
     />
   ));
 
-  storiesOf("Appointment", module)
+storiesOf("Appointment", module)
   .addParameters({
     backgrounds: [{ name: "white", value: "#fff", default: true }]
   })
   .add("Appointment", () => <Appointment />)
   .add("Appointment with Time", () => <Appointment time="12pm" />)
-  .add("Header", ()=> <Header time="12pm" />)
-  .add("Empty", () => <Empty onAdd={action("onAdd")}/>)
-  .add("Show", ()=> <Show 
-  onEdit={action("onEdit")}
-  onDelete={action("onDelete")}
-  student="Lydia Miller-Jones"
-  interviewer = {interviewer}
+  .add("Header", () => <Header time="12pm" />)
+  .add("Empty", () => <Empty onAdd={action("onAdd")} />)
+  .add("Show", () => <Show
+    onEdit={action("onEdit")}
+    onDelete={action("onDelete")}
+    student="Lydia Miller-Jones"
+    interviewer={interviewer}
   />)
-  .add("Confirm", ()=> <Confirm 
-  onCancel={action("onCancel")}
-  onConfirm={action("onConfirm")}
-  message="Delete the appointment?"
+  .add("Confirm", () => <Confirm
+    onCancel={action("onCancel")}
+    onConfirm={action("onConfirm")}
+    message="Delete the appointment?"
   />)
-  .add("Status", ()=> <Status 
-  message="Deleting"
+  .add("Status", () => <Status
+    message="Deleting"
   />)
-  .add("Error", ()=> <Error 
-  onClose={action("onClose")}
-  message="Could not delete appointment."
+  .add("Error", () => <Error
+    onClose={action("onClose")}
+    message="Could not delete appointment."
   />)
-  .add("Create", ()=> <Form 
-  interviewers={interviewers}
-  onCancel={action("onCancel")}
-  onSave={action("onSave")}
+  .add("Create", () => <Form
+    interviewers={interviewers}
+    onCancel={action("onCancel")}
+    onSave={action("onSave")}
   />)
-  .add("Edit", ()=> <Form 
-  student="Lydia Miller-Jones"
-  interviewer = {4}
-  interviewers={interviewers}
-  onCancel={action("onCancel")}
-  onSave={action("onSave")}
+  .add("Edit", () => <Form
+    student="Lydia Miller-Jones"
+    interviewer={4}
+    interviewers={interviewers}
+    onCancel={action("onCancel")}
+    onSave={action("onSave")}
   />)
 
   .add("Appointment Empty", () => (
@@ -200,4 +200,3 @@ storiesOf("InterviewerList", module)
       <Appointment time="5pm" />
     </Fragment>
   ))
-  
